@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show StaffList</title>
+</head>
+<body>
+    <p> <a th:href="@{/}"> Add Staff </a></p>
+
+    <h2>SHOW ALL STAFF</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Title</th>
+            <th>Salary</th>
+            <th>Modify</th>
+        </tr>
+
+        <tr th:each="staff : ${stafflist}">
+            <td th:text="${staff.name}"></td>
+            <td th:text="${staff.title}"></td>
+            <td th:text="${staff.salary}"></td>
+            <td> <a role="button" th:href="@{/(id= ${staff.id})}">Update</a> </td>
+        </tr>
+    </table>
+</body>
+</html>
